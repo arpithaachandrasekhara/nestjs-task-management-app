@@ -20,11 +20,7 @@ export class TasksController {
 
   @Get('/:id')
   getTaskById(@Param('id') id: string): Task {
-    const found = this.tasksService.getTaskById(id);
-    if (!found) {
-        throw new NotFoundException();
-    } 
-    return found;
+    return this.tasksService.getTaskById(id);
   }
 
   @Post()
